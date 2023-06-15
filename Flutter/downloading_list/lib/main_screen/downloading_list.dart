@@ -46,88 +46,97 @@ class _DownloadingListState extends State<DownloadingList> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.colore5ecff,
-      appBar: AppBar(
-        backgroundColor: AppColors.color213e78,
-        centerTitle: true,
-        title: const Text(
-          'Downloading Simulator',
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            'assets/images/photo.jpg',
+          ),
+          fit: BoxFit.cover,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(35.0),
-        child: _loading
-            ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(40.0),
-                      ),
+      child: Scaffold(
+        extendBodyBehindAppBar: true,
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          title: Text(
+            'Downloading Simulator',
+            style: AppTextStyle.candice30w400
+                .copyWith(color: AppColors.colorffffff),
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(35.0),
+          child: _loading
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Spacer(
+                      flex: 30,
                     ),
-                    child: ClipRRect(
+                    ClipRRect(
                       borderRadius: const BorderRadius.all(
                         Radius.circular(20),
                       ),
                       child: LinearProgressIndicator(
+                        backgroundColor: AppColors.color3b78af,
+                        color: AppColors.color213e78,
                         minHeight: 15,
                         value: _progressValue,
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    child: CircularProgressIndicator(
-                      backgroundColor: AppColors.color89d6fb,
-                      strokeWidth: 5.0,
+                    const Spacer(),
+                    CircularProgressIndicator(
+                      backgroundColor: AppColors.color3b78af,
+                      color: AppColors.color213e78,
+                      strokeWidth: 6.0,
                       value: _progressValue,
                     ),
+                    const Spacer(),
+                    Text(
+                      'Download in progress (${(_progressValue * 100).round()}%)',
+                      textAlign: TextAlign.center,
+                      style: AppTextStyle.candice30w400
+                          .copyWith(color: AppColors.colorffffff),
+                    ),
+                    const Spacer(
+                      flex: 30,
+                    )
+                  ],
+                )
+              : Center(
+                  child: Text(
+                    'Press button to start downloading...',
+                    textAlign: TextAlign.center,
+                    style: AppTextStyle.candice30w400
+                        .copyWith(color: AppColors.colore5ecff),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Download in progress (${(_progressValue * 100).round()}%)',
-                    style: AppTextStyle.lobster24w400,
-                  ),
-                ],
-              )
-            : Center(
-                child: Text(
-                  'Press button to start downloading...',
-                  style: AppTextStyle.lobster24w400,
                 ),
-              ),
-      ),
-      floatingActionButton: SizedBox(
-        width: 80,
-        height: 80,
-        child: FloatingActionButton(
-          onPressed: () {
-            setState(
-              () {
-                _loading = !_loading;
-                _updateProgress();
-              },
-            );
-          },
-          backgroundColor: AppColors.color3b78af,
-          child: Icon(
-            Icons.downloading_rounded,
-            size: 55,
-            color: AppColors.colore5ecff,
+        ),
+        floatingActionButton: SizedBox(
+          width: 80,
+          height: 80,
+          child: FloatingActionButton(
+            onPressed: () {
+              setState(
+                () {
+                  _loading = !_loading;
+                  _updateProgress();
+                },
+              );
+            },
+            backgroundColor: AppColors.color3b78af,
+            child: Icon(
+              Icons.downloading_rounded,
+              size: 55,
+              color: AppColors.colore5ecff,
+            ),
           ),
         ),
       ),
     );
   }
 }
-/// TO DO LIST
-/// Импортировать и применить шрифт

@@ -1,11 +1,9 @@
-import 'package:downloading_list/theme/colors.dart';
 import 'package:flutter/cupertino.dart';
 
 abstract class AppTextStyle {
-  static TextStyle lobster24w400 = TextStyle(
+  static TextStyle candice30w400 = const TextStyle(
     fontFamily: 'Candice',
-    fontSize: 19,
+    fontSize: 30,
     fontWeight: FontWeight.w400,
-    color: AppColors.color2211a43,
   );
 }

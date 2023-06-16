@@ -52,6 +52,8 @@ class _DownloadingListState extends State<DownloadingList> {
           image: AssetImage(
             'assets/images/photo.jpg',
           ),
+          // image: NetworkImage(
+          //     'https://images.wallpaperscraft.ru/image/single/siluet_odinochestvo_art_139903_2160x3840.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -59,20 +61,29 @@ class _DownloadingListState extends State<DownloadingList> {
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
+            ),
+          ),
+          backgroundColor: Colors.black.withOpacity(0.5),
           elevation: 0,
           centerTitle: true,
-          title: Text(
-            'Downloading Simulator',
-            style: AppTextStyle.candice30w400
-                .copyWith(color: AppColors.colorffffff),
+          title: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              'Downloading Simulator',
+              textAlign: TextAlign.center,
+              style: AppTextStyle.candice30w400
+                  .copyWith(color: AppColors.colorffffff),
+            ),
           ),
         ),
         body: Padding(
           padding: const EdgeInsets.all(35.0),
           child: _loading
               ? Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Spacer(
                       flex: 30,
@@ -96,11 +107,25 @@ class _DownloadingListState extends State<DownloadingList> {
                       value: _progressValue,
                     ),
                     const Spacer(),
-                    Text(
-                      'Download in progress (${(_progressValue * 100).round()}%)',
-                      textAlign: TextAlign.center,
-                      style: AppTextStyle.candice30w400
-                          .copyWith(color: AppColors.colorffffff),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(10.0),
+                        ),
+                        color: Colors.black.withOpacity(0.5),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: 10,
+                        ),
+                        child: Text(
+                          'Download in progress (${(_progressValue * 100).round()}%)',
+                          textAlign: TextAlign.center,
+                          style: AppTextStyle.candice30w400
+                              .copyWith(color: AppColors.colorffffff),
+                        ),
+                      ),
                     ),
                     const Spacer(
                       flex: 30,
@@ -108,11 +133,24 @@ class _DownloadingListState extends State<DownloadingList> {
                   ],
                 )
               : Center(
-                  child: Text(
-                    'Press button to start downloading...',
-                    textAlign: TextAlign.center,
-                    style: AppTextStyle.candice30w400
-                        .copyWith(color: AppColors.colore5ecff),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(10.0),
+                      ),
+                      color: Colors.black.withOpacity(0.5),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 10,
+                      ),
+                      child: Text(
+                        'Press button to start downloading...',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyle.candice30w400
+                            .copyWith(color: AppColors.colore5ecff),
+                      ),
+                    ),
                   ),
                 ),
         ),
@@ -128,11 +166,11 @@ class _DownloadingListState extends State<DownloadingList> {
                 },
               );
             },
-            backgroundColor: AppColors.color3b78af,
+            backgroundColor: AppColors.color3b78af.withOpacity(0.4),
             child: Icon(
               Icons.downloading_rounded,
               size: 55,
-              color: AppColors.colore5ecff,
+              color: AppColors.color000000.withOpacity(0.7),
             ),
           ),
         ),

@@ -11,4 +11,5 @@ abstract class AppColors {
 
 // Text colors
   static Color colorffffff = const Color(0xffffffff);
+  static Color color000000 = const Color(0xff000000);
 }

@@ -1,7 +1,12 @@
 part of 'list_view.dart';
 
 class AddContainer extends StatelessWidget {
-  const AddContainer({super.key});
+  const AddContainer({
+    required this.newAddText,
+    super.key,
+  });
+
+  final TextStyle newAddText;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +27,8 @@ class AddContainer extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              '+ Add',
-              style: AppTextStyle.candice30w400,
+              '+ Account',
+              style: newAddText,
             ),
           ),
         ),

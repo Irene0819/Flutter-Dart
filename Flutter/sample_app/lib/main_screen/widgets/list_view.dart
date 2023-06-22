@@ -35,7 +35,9 @@ class SampleListViev extends StatelessWidget {
               width: 10,
             ),
             itemBuilder: (BuildContext context, int index) {
-              return const AddContainer();
+              return AddContainer(
+                newAddText: AppTextStyle.candice25w300,
+              );
             },
           ),
         ),

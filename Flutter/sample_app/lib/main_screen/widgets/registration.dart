@@ -32,6 +32,7 @@ class Registrattion extends StatelessWidget {
           height: 10,
         ),
         TextField(
+          maxLength: 25,
           style: registrationText,
         ),
         const SizedBox(

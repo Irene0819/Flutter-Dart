@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 part './widgets/circle.dart';
 part './widgets/pudle.dart';
+part '../water_rounds_page/widgets/circle_appBar.dart';
 
 class RoundsOnWater extends StatelessWidget {
   const RoundsOnWater({super.key});
@@ -12,18 +13,7 @@ class RoundsOnWater extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.colore5ecff,
-      appBar: AppBar(
-        backgroundColor: AppColors.color221b45,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Rounds on water',
-              style: AppTextStyle.lobster24w400,
-            ),
-          ],
-        ),
-      ),
+      appBar: const CircleAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

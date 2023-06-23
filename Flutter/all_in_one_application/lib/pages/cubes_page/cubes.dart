@@ -10,13 +10,24 @@ class Cubes extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.colorb3ecec,
       appBar: AppBar(
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: AppColors.colorffffff,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         backgroundColor: AppColors.color3bd6c6,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
+            Icon(
               Icons.view_in_ar_rounded,
               size: 35,
+              color: AppColors.colorffffff,
             ),
             const SizedBox(
               width: 5,

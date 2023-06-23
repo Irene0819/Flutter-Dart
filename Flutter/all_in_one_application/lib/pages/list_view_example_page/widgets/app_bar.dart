@@ -12,6 +12,7 @@ class SampleAppBar extends StatelessWidget implements PreferredSizeWidget {
           bottomRight: Radius.circular(15),
         ),
       ),
+      backgroundColor: AppColors.color3b78af,
       elevation: 0,
       centerTitle: true,
       title: Padding(

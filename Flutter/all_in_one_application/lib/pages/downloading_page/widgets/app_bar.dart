@@ -6,6 +6,16 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: true,
+      leading: IconButton(
+        icon: Icon(
+          Icons.arrow_back,
+          color: AppColors.colorffffff,
+        ),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
@@ -18,7 +28,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       title: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Text(
-          'Downloading Simulator',
+          'Loading simulator',
           textAlign: TextAlign.center,
           style:
               AppTextStyle.candice30w400.copyWith(color: AppColors.colorffffff),

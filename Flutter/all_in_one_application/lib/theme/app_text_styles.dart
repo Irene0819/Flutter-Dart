@@ -12,7 +12,7 @@ abstract class AppTextStyle {
 
   static TextStyle italic20w400 = const TextStyle(
     fontFamily: 'Italic',
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: FontWeight.w400,
   );
 

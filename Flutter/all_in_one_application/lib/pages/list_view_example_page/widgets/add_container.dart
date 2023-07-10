@@ -19,7 +19,7 @@ class AddContainer extends StatelessWidget {
           borderRadius: const BorderRadius.all(
             Radius.circular(15),
           ),
-          color: AppColors.colore5ecff,
+          color: AppColors.colorffffff.withOpacity(0.8),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -27,7 +27,7 @@ class AddContainer extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              '+ Account',
+              '+ App',
               style: newAddText,
             ),
           ),

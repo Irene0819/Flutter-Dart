@@ -65,13 +65,37 @@ class _MapsState extends State<Maps> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: <Color>[
-                    AppColors.color005b96,
-                    AppColors.color146eb4,
-                    AppColors.color3d85c6,
+                    AppColors.color0865B7,
+                    AppColors.color0b7de1,
                   ],
                 ),
               ),
             ),
+          ),
+          body: Column(
+            children: [
+              const Spacer(),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(24),
+                    topRight: Radius.circular(24),
+                  ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: <Color>[
+                      AppColors.color2c6680,
+                      AppColors.color246781,
+                      AppColors.color2d6c87,
+                      AppColors.color285771,
+                    ],
+                  ),
+                ),
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 3.5,
+              ),
+            ],
           ),
         ),
       );

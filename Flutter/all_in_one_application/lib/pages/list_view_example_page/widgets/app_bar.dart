@@ -5,21 +5,27 @@ class SampleAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      shape: const RoundedRectangleBorder(
+    return Container(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(15),
           bottomRight: Radius.circular(15),
         ),
+        image: DecorationImage(
+          image: AssetImage('assets/images/AppBackground.jpg'),
+          fit: BoxFit.cover,
+        ),
       ),
-      backgroundColor: AppColors.color3b78af,
-      elevation: 0,
-      centerTitle: true,
-      title: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Text(
-          'Sample App',
-          style: AppTextStyle.candice30w400,
+      child: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text(
+            'Sample App',
+            style: AppTextStyle.candice30w400,
+          ),
         ),
       ),
     );

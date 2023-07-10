@@ -77,10 +77,11 @@ class _DownloadingListState extends State<DownloadingList> {
         backgroundColor: Colors.transparent,
         appBar: const AppBarWidget(),
         body: Padding(
-            padding: const EdgeInsets.all(35.0),
-            child: _loading
-                ? ProgressIndicators(progressValue: _progressValue)
-                : const AllertWidget()),
+          padding: const EdgeInsets.all(35.0),
+          child: _loading
+              ? ProgressIndicators(progressValue: _progressValue)
+              : const AllertWidget(),
+        ),
         floatingActionButton: FloatigButtonWidget(
           onButtonPressed: onButtonPressed,
         ),

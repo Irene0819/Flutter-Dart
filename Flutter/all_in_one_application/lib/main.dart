@@ -1,5 +1,6 @@
-import 'package:all_in_one_application/all_in_one_page.dart';
 import 'package:flutter/material.dart';
+
+import 'package:all_in_one_application/all_in_one_page.dart';
 
 void main() {
   runApp(const MyApp());

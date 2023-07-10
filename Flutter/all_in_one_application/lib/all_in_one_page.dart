@@ -1,6 +1,7 @@
 import 'package:all_in_one_application/pages/cubes_page/cubes.dart';
 import 'package:all_in_one_application/pages/downloading_page/downloading_list.dart';
 import 'package:all_in_one_application/pages/list_view_example_page/sample_app.dart';
+import 'package:all_in_one_application/pages/registration/registration_page.dart';
 import 'package:all_in_one_application/pages/water_rounds_page/rounds_on_water.dart';
 import 'package:all_in_one_application/theme/app_colors.dart';
 import 'package:all_in_one_application/theme/app_text_styles.dart';
@@ -50,7 +51,7 @@ class _AllInOnePageState extends State<AllInOnePage> {
             ),
             AppsButton(
               appImage: 'assets/icons/download.png',
-              appName: 'Симулятор загрузки',
+              appName: 'Загрузка',
               onTapEvent: () {
                 Navigator.push(
                   context,
@@ -80,6 +81,18 @@ class _AllInOnePageState extends State<AllInOnePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const RoundsOnWater(),
+                  ),
+                );
+              },
+            ),
+            AppsButton(
+              appImage: 'assets/icons/registration.png',
+              appName: 'Registration',
+              onTapEvent: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NewProfile(),
                   ),
                 );
               },

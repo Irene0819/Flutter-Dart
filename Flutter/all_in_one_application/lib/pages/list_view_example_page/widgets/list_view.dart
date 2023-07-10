@@ -13,12 +13,15 @@ class SampleListViev extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 100,
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
           topLeft: Radius.circular(15),
           topRight: Radius.circular(15),
         ),
-        color: AppColors.color6faed7,
+        image: DecorationImage(
+          image: AssetImage('assets/images/AppBackground.jpg'),
+          fit: BoxFit.cover,
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10.0),

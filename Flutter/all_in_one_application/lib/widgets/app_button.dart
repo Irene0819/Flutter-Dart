@@ -14,6 +14,8 @@ class AppsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 10,
@@ -22,8 +24,8 @@ class AppsButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTapEvent,
         child: Container(
-          width: MediaQuery.of(context).size.width / 2.5,
-          height: MediaQuery.of(context).size.height / 4,
+          width: size.width / 2.5,
+          height: size.height / 4,
           padding: const EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(
@@ -39,8 +41,8 @@ class AppsButton extends StatelessWidget {
               ),
               Divider(
                 color: AppColors.color660066,
-                indent: 20,
-                endIndent: 20,
+                indent: 15,
+                endIndent: 15,
               ),
               Padding(
                 padding: const EdgeInsets.only(
@@ -49,11 +51,12 @@ class AppsButton extends StatelessWidget {
                 ),
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
+                  alignment: Alignment.center,
                   child: Text(
                     appName,
                     style: const TextStyle(
                       fontStyle: FontStyle.italic,
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
